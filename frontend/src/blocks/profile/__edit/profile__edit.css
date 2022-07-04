@@ -1,0 +1,13 @@
+.profile__edit {
+display: none;
+position: absolute;
+width: 26px;
+height: 26px;
+margin-left: 47px;
+}
+
+
+.profile__edit:hover {
+  display: block;
+
+}

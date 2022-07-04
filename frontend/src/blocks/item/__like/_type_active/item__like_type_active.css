@@ -1,0 +1,13 @@
+.item__like_type_active {
+    width: 22px;
+    height: 19px;
+    background-image: url(../../../../images/likeActive.svg);
+    border: none;
+    background-color: white;
+  }
+
+  .item__like_type_active:hover {
+    transition: opacity 0.2s ease;
+    opacity: 0.5;
+  }
+

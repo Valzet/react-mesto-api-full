@@ -1,0 +1,64 @@
+.profile__edit-image {
+  width: 120px;
+  height: 120px;
+  background: inherit;
+  margin-right: 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 60px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 768px) {
+  .profile__edit-image{
+    margin-right: 0;
+    margin: 0 auto;
+
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .profile__edit-image{
+    margin-bottom: 26px;
+
+  }
+}
+
+.profile__edit-image::before {
+  visibility: hidden;
+  content: '';
+  background-image: url('../../../images/editAvatar.svg');
+  background-position: center;
+  position: absolute;
+  top: calc(50% - 13px);
+  left: calc(50% - 13px);
+  z-index: 1;
+  width: 26px;
+  height: 26px;
+}
+
+.profile__edit-image::after {
+  width: 120px;
+  height: 120px;
+  visibility: hidden;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.8);
+  position:absolute;
+  top: 0;
+  left: 0;
+  border-radius: 60px;
+  padding-left: 10px;
+}
+
+.profile__edit-image:hover::before{
+  visibility: visible;
+}
+
+.profile__edit-image:hover::after {
+  visibility: visible;
+  transition: opacity 0.4s ease-out;
+  opacity: 1;
+}

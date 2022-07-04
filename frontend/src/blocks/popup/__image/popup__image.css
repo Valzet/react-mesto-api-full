@@ -1,0 +1,8 @@
+.popup__image {
+  /* height: 540px;
+  width: auto;
+  display: flex; */
+  /* flex-direction: column; */
+  position: relative;
+  margin: 0 auto;
+}

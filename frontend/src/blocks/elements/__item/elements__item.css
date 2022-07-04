@@ -1,0 +1,7 @@
+.elements__item {
+  background-color: white;
+  border-radius: 10px;
+  grid-template-columns: 282px 1fr;
+  max-width: 100%;
+
+}
