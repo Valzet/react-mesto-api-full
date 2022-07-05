@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://api.mesto-foreve.students.nomoredomains.sbs';
+export const BASE_URL = 'http://localhost:3001';
 // export const BASE_URL = 'http://api.mesto-foreve.students.nomoredomains.sbs/';
 
 const checkResponse = (res) => {
@@ -13,21 +13,21 @@ const checkResponse = (res) => {
         });
 };
 
-export const register = ({ password, email }) => {
+export const register = ({ email, password }) => {
     return fetch(`${BASE_URL}/signup`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ password, email })
+        body: JSON.stringify({ email, password })
     }).then(checkResponse)
 };
-export const authorize = ({ password, email }) => {
+export const authorize = ({ email, password }) => {
     return fetch(`${BASE_URL}/signin`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ password, email })
+        body: JSON.stringify({ email, password })
     })
         .then(checkResponse);
 
@@ -37,12 +37,9 @@ export const getContent = (token) => {
         method: 'GET',
         headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${token}`
+            'authorization': `Bearer ${token}`
         }
     }).then(checkResponse)
-        .then((res) => {
-            return res;
-        })
         .catch((err) => console.log(err));
 }
-
+ 

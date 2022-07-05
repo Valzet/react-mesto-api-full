@@ -1,7 +1,14 @@
 class Api {
   constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
-    this._headers = headers;
+    // this._headers = headers;
+  }
+
+  get _headers() {
+    return {
+      'Content-Type': 'application/json',
+      authorization: `Bearer ${localStorage.getItem('token')}`,
+    }
   }
 
   _checkResponse(res) {
@@ -14,7 +21,8 @@ class Api {
   getProfile() {
     return fetch(`${this._baseUrl}/users/me`,
       {
-        headers: this._headers
+        headers: this._headers,
+        credentials: 'include',
       })
       .then(this._checkResponse)
   }
@@ -22,7 +30,8 @@ class Api {
   getInitialCards() {
     return fetch(`${this._baseUrl}/cards`,
       {
-        headers: this._headers
+        headers: this._headers,
+        credentials: 'include',
       })
       .then(this._checkResponse)
   }
@@ -32,6 +41,7 @@ class Api {
       {
         method: "PATCH",
         headers: this._headers,
+        credentials: 'include',
         body: JSON.stringify({
           name: data.name,
           about: data.about
@@ -45,10 +55,10 @@ class Api {
       {
         method: "POST",
         headers: this._headers,
+        credentials: 'include',
         body: JSON.stringify({
           name: data.name,
           link: data.link
-
         })
       })
       .then(this._checkResponse)
@@ -59,6 +69,7 @@ class Api {
       {
         method: "DELETE",
         headers: this._headers,
+        credentials: 'include',
       })
       .then(this._checkResponse)
   }
@@ -67,6 +78,7 @@ class Api {
       {
         method: isLiked ? "PUT" : "DELETE",
         headers: this._headers,
+        credentials: 'include',
       })
       .then(this._checkResponse)
   }
@@ -75,6 +87,7 @@ class Api {
       {
         method: "PATCH",
         headers: this._headers,
+        credentials: 'include',
         body: JSON.stringify({
           avatar: data.avatar
         })
@@ -82,11 +95,15 @@ class Api {
       .then(this._checkResponse)
   }
 }
-export const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-39',
+
+// baseUrl: 'http://api.mesto-foreve.students.nomoredomains.sbs/',
+
+
+ export  const api = new Api({
+  // baseUrl: `${window.location.protocol}${process.env.REACT_APP_API_URL || '//localhost:3001'}`,
+  baseUrl: `http://localhost:3001`,
   headers: {
-    authorization: '7c5dd48f-1c5b-4b92-99df-c86d4fd58e45',
+    'authorization': `Bearer ${localStorage.getItem('token')}`,
     'Content-Type': 'application/json'
   }
 });
-
