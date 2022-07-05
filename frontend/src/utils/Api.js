@@ -96,12 +96,9 @@ class Api {
   }
 }
 
-// baseUrl: 'http://api.mesto-foreve.students.nomoredomains.sbs/',
-
-
- export  const api = new Api({
-  // baseUrl: `${window.location.protocol}${process.env.REACT_APP_API_URL || '//localhost:3001'}`,
-  baseUrl: `http://localhost:3001`,
+export const api = new Api({
+  baseUrl: 'http://api.mesto-foreve.students.nomoredomains.sbs',
+  // baseUrl: `http://localhost:3001`,
   headers: {
     'authorization': `Bearer ${localStorage.getItem('token')}`,
     'Content-Type': 'application/json'

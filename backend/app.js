@@ -3,7 +3,7 @@ const cors = require('cors');
 
 const app = express();
 const mongoose = require('mongoose');
-// ЗАМЕНИТЬ ПОРТ В ДЕПЛОЕ*************************
+
 const { PORT = 3001 } = process.env;
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
@@ -18,8 +18,8 @@ const NotFoundError = require('./errors/not-found-err');
 const options = {
   origin: [
     'http://localhost:3000',
-    // 'https://ваш-домен',
-    // 'https://your-name-of.github.io',
+    'http://mesto-foreve.students.nomoredomains.sbs',
+    'https://github.com/Valzet',
   ],
   credentials: true,
 };
