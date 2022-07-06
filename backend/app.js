@@ -15,17 +15,17 @@ const auth = require('./middlewares/auth');
 const { login, createUser } = require('./controllers/users');
 const NotFoundError = require('./errors/not-found-err');
 
-const options = {
-  origin: [
-    'http://localhost:3000',
-    'http://mesto-foreve.students.nomoredomains.sbs',
-    'https://github.com/Valzet',
-  ],
-  credentials: true,
-};
+// const options = {
+//   origin: [
+//     'http://localhost:3000',
+//     'http://mesto-foreve.students.nomoredomains.sbs',
+//     'https://github.com/Valzet',
+//   ],
+//   credentials: true,
+// };
 
 app.use(cookieParser());
-app.use('*', cors(options));
+app.use(cors());
 mongoose.connect('mongodb://localhost:27017/mestodb');
 app.use(helmet());
 

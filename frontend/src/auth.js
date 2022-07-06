@@ -1,5 +1,5 @@
 // export const BASE_URL = 'http://localhost:3001';
-export const BASE_URL = 'http://api.mesto-foreve.students.nomoredomains.sbs/';
+export const BASE_URL = 'http://api.mesto-foreve.students.nomoredomains.sbs';
 
 const checkResponse = (res) => {
     if (res.ok) {

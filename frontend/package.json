@@ -19,7 +19,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "npm run build && scp -r ./build/* valzet@158.160.3.235:/home/valzet/react-mesto-api-full/frontend"
+    "deploy": "npm run build && scp -r ./build/* valzet@158.160.3.235:/home/valzet/react-mesto-api-full/frontend",
+    "end": "scp .env valzet@158.160.3.235:/home/valzet/react-mesto-api-full/frontend"
   },
   "eslintConfig": {
     "extends": [
