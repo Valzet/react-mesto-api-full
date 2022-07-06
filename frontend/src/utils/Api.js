@@ -90,7 +90,7 @@ class Api {
 }
 
 export const api = new Api({
-  baseUrl: 'http://api.mesto-foreve.students.nomoredomains.sbs',
+  baseUrl: 'https://api.mesto-foreve.students.nomoredomains.sbs',
   // baseUrl: `http://localhost:3001`,
   headers: {
     'authorization': `Bearer ${localStorage.getItem('token')}`,
