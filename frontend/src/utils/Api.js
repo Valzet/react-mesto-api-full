@@ -22,7 +22,6 @@ class Api {
     return fetch(`${this._baseUrl}/users/me`,
       {
         headers: this._headers,
-        credentials: 'include',
       })
       .then(this._checkResponse)
   }
@@ -31,7 +30,6 @@ class Api {
     return fetch(`${this._baseUrl}/cards`,
       {
         headers: this._headers,
-        credentials: 'include',
       })
       .then(this._checkResponse)
   }
@@ -41,7 +39,6 @@ class Api {
       {
         method: "PATCH",
         headers: this._headers,
-        credentials: 'include',
         body: JSON.stringify({
           name: data.name,
           about: data.about
@@ -55,7 +52,6 @@ class Api {
       {
         method: "POST",
         headers: this._headers,
-        credentials: 'include',
         body: JSON.stringify({
           name: data.name,
           link: data.link
@@ -69,7 +65,6 @@ class Api {
       {
         method: "DELETE",
         headers: this._headers,
-        credentials: 'include',
       })
       .then(this._checkResponse)
   }
@@ -78,7 +73,6 @@ class Api {
       {
         method: isLiked ? "PUT" : "DELETE",
         headers: this._headers,
-        credentials: 'include',
       })
       .then(this._checkResponse)
   }
@@ -87,7 +81,6 @@ class Api {
       {
         method: "PATCH",
         headers: this._headers,
-        credentials: 'include',
         body: JSON.stringify({
           avatar: data.avatar
         })

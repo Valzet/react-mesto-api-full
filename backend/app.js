@@ -1,5 +1,4 @@
 const express = require('express');
-const cors = require('cors');
 
 const app = express();
 const mongoose = require('mongoose');
@@ -8,6 +7,7 @@ const { PORT = 3001 } = process.env;
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 require('dotenv').config();
+const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const { celebrate, Joi, errors } = require('celebrate');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
@@ -25,10 +25,9 @@ const NotFoundError = require('./errors/not-found-err');
 // };
 
 app.use(cookieParser());
-app.use(cors());
 mongoose.connect('mongodb://localhost:27017/mestodb');
 app.use(helmet());
-
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
